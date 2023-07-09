@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config src/index.js",
+    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=.env.dev",
     "staging": "node -r dotenv/config src/index.js dotenv_config_path=.env.staging",
-    "test": "NODE_ENV=test jest --verbose",
+    "test": "DOTENV_CONFIG_PATH=.env.test NODE_ENV=test jest --verbose",
     "format:fix": "prettier --write src/",
     "lint:fix": "eslint src --fix",
     "precommit": "npm run format:fix && npm run lint:fix",
